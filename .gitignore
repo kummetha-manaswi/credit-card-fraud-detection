@@ -1,0 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# CPython and IDE
+.pytest_cache/
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Virtual Environments
+env/
+venv/
+.venv/
+ENV/
+
+# Large Datasets & Raw CSV files
+creditcard.csv
+*.csv
+!data/sample_transactions.csv
+
+# Large SQLite databases
+*.db
+!database/sample_fraud.db
+
+# Legacy backups
+legacy/
+
+# Scratch and temporary logs
+scratch/
+*.log
