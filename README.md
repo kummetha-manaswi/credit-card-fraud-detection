@@ -13,9 +13,6 @@ Built with **Python, Machine Learning, SQL, Explainable AI, FastAPI and Streamli
 🌐 **Live Application:**  
 https://ai-fraud-guard.streamlit.app/
 
-💻 **GitHub Repository:**  
-https://github.com/kummetha-manaswi/credit-card-fraud-detection
-
 ---
 
 ## 📸 Application Preview
