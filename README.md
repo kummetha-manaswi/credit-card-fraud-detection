@@ -10,8 +10,7 @@ Built with **Python, Machine Learning, SQL, Explainable AI, FastAPI and Streamli
 
 ## 🚀 Live Demo
 
-🌐 **Live Application:**  
-https://ai-fraud-guard.streamlit.app/
+🌐 **Live Application:** https://ai-fraud-guard.streamlit.app/
 
 ---
 
@@ -233,41 +232,33 @@ The prediction pipeline performs:
 5. Fraud probability calculation
 6. Threshold-based classification
 
-Interactive Swagger/OpenAPI documentation is available at:
-
-`/docs`
-
-when the API is running locally.
+Interactive Swagger/OpenAPI documentation is available at `/docs` when the API is running locally.
 
 ---
 
 ## 🏗️ System Architecture
 
-    Transaction
-         ↓
-    Data Cleaning
-         ↓
-    Duplicate Handling
-         ↓
-    Train / Validation / Test Split
-         ↓
-    SMOTE on Training Data
-         ↓
-    Feature Scaling
-         ↓
-    Random Forest
-         ↓
-    Fraud Probability
-         ↓
-    Decision Threshold (0.75)
-         ↓
-    Fraud / Legitimate Decision
-         ↓
-    ┌───────────────┬────────────────┬──────────────────┐
-    ↓               ↓                ↓
-    Streamlit     FastAPI       SHAP Explainability
-    ↓               ↓                ↓
-    User UI      API Clients     Model Insights
+Transaction  
+↓  
+Data Cleaning  
+↓  
+Duplicate Handling  
+↓  
+Train / Validation / Test Split  
+↓  
+SMOTE on Training Data  
+↓  
+Feature Scaling  
+↓  
+Random Forest  
+↓  
+Fraud Probability  
+↓  
+Decision Threshold (0.75)  
+↓  
+Fraud / Legitimate Decision  
+↓  
+Streamlit / FastAPI / SHAP Explainability
 
 ---
 
@@ -317,17 +308,17 @@ In **Simple Mode**, users do not need to manually enter these variables.
 
 The general flow is:
 
-    Transaction Data
-          ↓
-    Existing V1–V28 Features
-          ↓
-    Preprocessing
-          ↓
-    Random Forest
-          ↓
-    Fraud Probability
-          ↓
-    Risk Decision
+Transaction Data  
+↓  
+Existing V1–V28 Features  
+↓  
+Preprocessing  
+↓  
+Random Forest  
+↓  
+Fraud Probability  
+↓  
+Risk Decision
 
 ---
 
@@ -387,60 +378,60 @@ The general flow is:
 
 ## 📁 Project Structure
 
-    credit-card-fraud-detection/
-    │
-    ├── .streamlit/
-    │   └── config.toml
-    │
-    ├── api/
-    │   ├── __init__.py
-    │   ├── app.py
-    │   └── schemas.py
-    │
-    ├── assets/
-    │   ├── card_hero.jpg
-    │   ├── card_shield.jpg
-    │   ├── neural_chip.jpg
-    │   ├── payment_pos.jpg
-    │   └── security_center.jpg
-    │
-    ├── data/
-    │   └── sample_transactions.csv
-    │
-    ├── model_artifacts/
-    │   ├── features.pkl
-    │   ├── random_forest_model.pkl
-    │   ├── scaler.pkl
-    │   └── threshold.pkl
-    │
-    ├── screenshots/
-    │   ├── home.png
-    │   ├── risk-checker.png
-    │   ├── fraud-intelligence.png
-    │   ├── ai-model.png
-    │   ├── explainable-ai.png
-    │   └── fraudguard-ai.png
-    │
-    ├── src/
-    │   ├── __init__.py
-    │   ├── assistant.py
-    │   ├── explainer.py
-    │   ├── predictor.py
-    │   └── sql_analytics.py
-    │
-    ├── tests/
-    │   ├── __init__.py
-    │   ├── test_api.py
-    │   ├── test_assistant.py
-    │   ├── test_predictor.py
-    │   └── test_sql.py
-    │
-    ├── Credit_Card_Fraud_Detection.ipynb
-    ├── app.py
-    ├── streamlit_app.py
-    ├── requirements.txt
-    ├── README.md
-    └── .gitignore
+credit-card-fraud-detection/  
+│  
+├── .streamlit/  
+│   └── config.toml  
+│  
+├── api/  
+│   ├── __init__.py  
+│   ├── app.py  
+│   └── schemas.py  
+│  
+├── assets/  
+│   ├── card_hero.jpg  
+│   ├── card_shield.jpg  
+│   ├── neural_chip.jpg  
+│   ├── payment_pos.jpg  
+│   └── security_center.jpg  
+│  
+├── data/  
+│   └── sample_transactions.csv  
+│  
+├── model_artifacts/  
+│   ├── features.pkl  
+│   ├── random_forest_model.pkl  
+│   ├── scaler.pkl  
+│   └── threshold.pkl  
+│  
+├── screenshots/  
+│   ├── home.png  
+│   ├── risk-checker.png  
+│   ├── fraud-intelligence.png  
+│   ├── ai-model.png  
+│   ├── explainable-ai.png  
+│   └── fraudguard-ai.png  
+│  
+├── src/  
+│   ├── __init__.py  
+│   ├── assistant.py  
+│   ├── explainer.py  
+│   ├── predictor.py  
+│   └── sql_analytics.py  
+│  
+├── tests/  
+│   ├── __init__.py  
+│   ├── test_api.py  
+│   ├── test_assistant.py  
+│   ├── test_predictor.py  
+│   └── test_sql.py  
+│  
+├── Credit_Card_Fraud_Detection.ipynb  
+├── app.py  
+├── streamlit_app.py  
+├── requirements.txt  
+├── README.md  
+└── .gitignore
 
 ---
 
@@ -448,28 +439,28 @@ The general flow is:
 
 ### 1. Clone the repository
 
-    git clone https://github.com/kummetha-manaswi/credit-card-fraud-detection.git
-    cd credit-card-fraud-detection
+git clone https://github.com/kummetha-manaswi/credit-card-fraud-detection.git  
+cd credit-card-fraud-detection
 
 ### 2. Install dependencies
 
-    pip install -r requirements.txt
+pip install -r requirements.txt
 
 ### 3. Run automated tests
 
-    pytest -v
+pytest -v
 
 ### 4. Start Streamlit
 
-    streamlit run streamlit_app.py
+streamlit run streamlit_app.py
 
 ### 5. Start FastAPI
 
-    uvicorn api.app:app --reload --port 8000
+uvicorn api.app:app --reload --port 8000
 
 FastAPI Swagger documentation:
 
-    http://localhost:8000/docs
+http://localhost:8000/docs
 
 ---
 
@@ -484,7 +475,7 @@ The project includes automated tests covering:
 
 Run the complete test suite with:
 
-    pytest -v
+pytest -v
 
 ---
 
@@ -502,15 +493,9 @@ A curated sample dataset is included for application demonstration and testing.
 
 The Streamlit application is deployed using **Streamlit Community Cloud**.
 
-### Application
+**Application entry point:** `streamlit_app.py`
 
-https://ai-fraud-guard.streamlit.app/
-
-### Entry Point
-
-    streamlit_app.py
-
-The application can be deployed directly from the GitHub repository using Streamlit Community Cloud.
+The application is available through the Live Demo link at the top of this README.
 
 ---
 
@@ -591,9 +576,6 @@ Rather than leaving the model inside a notebook, the project turns the machine l
 **Kummetha Manaswi**
 
 Data Science | Machine Learning | AI
-
-GitHub:  
-https://github.com/kummetha-manaswi
 
 ---
 
