@@ -2,36 +2,66 @@
 
 ### AI-Powered Credit Card Fraud Detection Platform
 
-A machine learning based fraud detection application that analyzes credit card transactions, estimates fraud risk, explains model decisions, and provides fraud analytics through an interactive FinTech-style web application.
+AI Fraud Guard is an end-to-end **Data Science and Machine Learning application** that analyzes credit card transactions, estimates fraud risk, explains model decisions, and provides interactive fraud intelligence through a FinTech-style web application.
 
-> Built with Machine Learning, Explainable AI, SQL, FastAPI and Streamlit.
+Built with **Python, Machine Learning, SQL, Explainable AI, FastAPI and Streamlit**.
 
 ---
 
 ## 🚀 Live Demo
 
-**Live Application:** `YOUR_STREAMLIT_URL`
+🌐 **Live Application:**  
+https://ai-fraud-guard.streamlit.app/
 
-**GitHub Repository:** `YOUR_GITHUB_URL`
+💻 **GitHub Repository:**  
+https://github.com/kummetha-manaswi/credit-card-fraud-detection
+
+---
+
+## 📸 Application Preview
+
+### 🏠 Home
+
+![AI Fraud Guard Home](screenshots/home.png)
+
+### 🔍 Transaction Risk Checker
+
+![Transaction Risk Checker](screenshots/risk-checker.png)
+
+### 📊 Fraud Intelligence
+
+![Fraud Intelligence](screenshots/fraud-intelligence.png)
+
+### 🤖 AI Model
+
+![AI Model](screenshots/ai-model.png)
+
+### 🧠 Explainable AI
+
+![Explainable AI](screenshots/explainable-ai.png)
+
+### 🤖 FraudGuard AI
+
+![FraudGuard AI](screenshots/fraudguard-ai.png)
 
 ---
 
 ## 🎯 Project Overview
 
-Credit card fraud detection is a challenging machine learning problem because fraudulent transactions are extremely rare compared with legitimate transactions.
+Credit card fraud detection is a highly imbalanced machine learning problem because fraudulent transactions represent only a very small fraction of total transactions.
 
-This project builds an end-to-end fraud detection platform that goes beyond a simple **"Fraud / Not Fraud"** prediction.
+Instead of stopping at model training, this project turns the complete machine learning workflow into an interactive application.
 
-The platform provides:
+The platform combines:
 
-- 🔍 Transaction risk checking
+- 🔍 Transaction risk assessment
 - 📊 Fraud analytics
-- 🤖 AI-powered customer assistant
-- 🧠 Explainable AI using SHAP
-- 🗄️ SQL-based transaction analysis
+- 🗄️ SQL-based analysis
+- 🤖 AI-powered fraud assistant
+- 🧠 SHAP Explainable AI
 - ⚡ FastAPI prediction service
 - 🧪 Automated testing
-- 🎨 Interactive FinTech-style interface
+- 🎨 FinTech-style interactive interface
 
 ---
 
@@ -39,22 +69,32 @@ The platform provides:
 
 The dataset contains a highly imbalanced fraud class, with fraudulent transactions representing approximately **0.1667%** of the data.
 
-The project uses:
+The final machine learning workflow uses:
 
-- SMOTE on training data
+- SMOTE for training-data class balancing
 - Random Forest classification
-- Validation-based threshold optimization
+- Probability-based prediction
+- Decision threshold optimization
 - Production decision threshold of **0.75**
 
-### Test Set Results
+### Test Set Performance
 
-| Metric | Result |
+| Metric | Random Forest |
 |---|---:|
 | Precision | **93.24%** |
 | Recall | **72.63%** |
-| F1-Score | **81.66%** |
+| F1 Score | **81.66%** |
 | ROC-AUC | **97.68%** |
 | PR-AUC | **79.74%** |
+
+### Model Comparison
+
+| Model | Precision | Recall | F1 | ROC-AUC | PR-AUC |
+|---|---:|---:|---:|---:|---:|
+| Logistic Regression | 10.74% | 87.37% | 19.12% | 96.44% | 65.32% |
+| Random Forest | **93.24%** | **72.63%** | **81.66%** | **97.68%** | **79.74%** |
+
+The Random Forest model provides a substantially stronger precision/F1 balance than the Logistic Regression baseline at the selected operating threshold.
 
 ### Confusion Matrix
 
@@ -63,29 +103,33 @@ The project uses:
 | **Actual Legitimate** | 56,646 | 5 |
 | **Actual Fraud** | 26 | 69 |
 
-At the production threshold of **0.75**, the model detected **69 fraudulent transactions** with only **5 false positives** on the test set.
+At the selected threshold of **0.75**, the model identified **69 fraudulent transactions** with **5 false positives** on the evaluated test set.
 
 ---
 
-## 🖥️ Features
+## 🖥️ Application Features
 
 ### 🔍 Transaction Risk Checker
 
-An interactive interface for evaluating transaction risk.
+An interactive transaction risk assessment interface.
 
-**Simple Mode**
+#### Simple Mode
 
 Designed for normal users.
 
-Users interact with:
+Users can interact with:
 
 - Transaction amount
-- Transaction time/scenario
-- Pre-loaded transaction examples
+- Transaction time
+- Pre-loaded transaction scenarios
+- Risk score
+- Risk level
+- Fraud decision
+- Risk probability
 
-The underlying `V1–V28` features are handled by the application automatically.
+The underlying `V1–V28` model features are handled automatically.
 
-**Advanced Mode**
+#### Advanced Mode
 
 Technical users can inspect the complete model input:
 
@@ -95,65 +139,82 @@ Technical users can inspect the complete model input:
 
 ### 📊 Fraud Intelligence
 
-Interactive fraud analytics including:
+An interactive analytics center for exploring fraud patterns.
 
-- Fraud vs legitimate transactions
+It includes:
+
+- Total transactions
+- Fraud transactions detected
+- Fraud rate
 - Transaction amount analysis
-- Time-based fraud patterns
-- Fraud statistics
-- SQL-powered analysis
+- Fraud-by-time analysis
+- Transaction amount bands
+- Fraud vs legitimate patterns
+- SQL-powered transaction analysis
+
+The application analyzes **283,726 transactions** with **473 fraudulent transactions** in the processed dataset.
 
 ---
 
 ### 🤖 FraudGuard AI
 
-A customer-facing AI assistant designed around transaction and fraud support.
+FraudGuard AI is a customer-facing assistant designed around transaction and card-security support.
 
-It can answer questions related to:
+It can help answer questions about:
 
 - Suspicious transactions
-- Fraud risk
-- Card security
+- Fraud alerts
+- Transaction risk
 - Declined payments
-- Transaction results
+- Card protection
+- Transaction checking
 - Application functionality
 
-The application also includes an offline fallback so the assistant can function without requiring an external LLM API key.
+The assistant also includes an **offline fallback**, allowing the application to provide rule-based responses without requiring an external LLM API key.
 
 ---
 
 ### 🧠 Explainable AI
 
-The application uses **SHAP (SHapley Additive exPlanations)** to explain model predictions.
+The application uses **SHAP (SHapley Additive exPlanations)** to explain individual model predictions.
 
-It provides:
+The Explainable AI page provides:
 
 - Global feature importance
 - Local transaction explanations
-- Feature contribution analysis
-- Individual prediction explanations
+- SHAP feature contributions
+- Factors increasing fraud risk
+- Factors supporting legitimacy
+- Individual prediction analysis
 
-The dataset's `V1–V28` variables are anonymized PCA-transformed features and are not assigned artificial business meanings.
+This helps answer:
+
+> **"Why did the model make this decision?"**
+
+The dataset's `V1–V28` variables are anonymized PCA-transformed features, so the application does not assign artificial business meanings to them.
 
 ---
 
 ### 🤖 AI Model
 
-The model analysis section provides:
+The AI Model page focuses on:
+
+> **"How well does the model work?"**
+
+It provides:
 
 - Precision
 - Recall
-- F1-Score
+- F1 Score
 - ROC-AUC
 - PR-AUC
-- Confusion matrix
+- Model comparison
 - Decision threshold analysis
+- Precision-recall trade-offs
 
-A threshold simulator allows users to explore the precision-recall trade-off.
+A threshold simulator allows users to explore how changing the decision boundary affects model behavior.
 
-Production threshold:
-
-`0.75`
+**Production threshold: `0.75`**
 
 ---
 
@@ -161,77 +222,91 @@ Production threshold:
 
 The project includes a FastAPI service for model inference.
 
-Main endpoints:
+### Endpoints
 
 - `GET /health`
 - `POST /predict`
 
-The API performs:
+The prediction pipeline performs:
 
 1. Input validation
 2. Feature ordering
-3. Scaling
-4. Model inference
+3. Feature scaling
+4. Random Forest inference
 5. Fraud probability calculation
 6. Threshold-based classification
 
-Interactive Swagger/OpenAPI documentation is available through the `/docs` route when the API is running.
+Interactive Swagger/OpenAPI documentation is available at:
+
+`/docs`
+
+when the API is running locally.
 
 ---
 
-## 🏗️ Architecture
+## 🏗️ System Architecture
 
-Transaction Data  
-↓  
-Data Cleaning  
-↓  
-Train / Validation / Test Split  
-↓  
-SMOTE on Training Data  
-↓  
-Feature Scaling  
-↓  
-Random Forest Model  
-↓  
-Fraud Probability  
-↓  
-Decision Threshold `0.75`  
-↓  
-Fraud / Legitimate Decision  
-↓  
-Streamlit / FastAPI / Explainable AI
+    Transaction
+         ↓
+    Data Cleaning
+         ↓
+    Duplicate Handling
+         ↓
+    Train / Validation / Test Split
+         ↓
+    SMOTE on Training Data
+         ↓
+    Feature Scaling
+         ↓
+    Random Forest
+         ↓
+    Fraud Probability
+         ↓
+    Decision Threshold (0.75)
+         ↓
+    Fraud / Legitimate Decision
+         ↓
+    ┌───────────────┬────────────────┬──────────────────┐
+    ↓               ↓                ↓
+    Streamlit     FastAPI       SHAP Explainability
+    ↓               ↓                ↓
+    User UI      API Clients     Model Insights
 
 ---
 
 ## 🧠 Machine Learning Pipeline
 
-The core machine learning workflow consists of:
+The core Data Science workflow consists of:
 
-1. Data cleaning
-2. Duplicate handling
-3. Train/validation/test splitting
-4. Handling class imbalance using SMOTE
-5. Feature scaling
-6. Random Forest training
-7. Probability prediction
-8. Threshold optimization
-9. Fraud classification
-10. Explainability using SHAP
+1. Data exploration
+2. Data cleaning
+3. Duplicate handling
+4. Train/validation/test splitting
+5. Class imbalance analysis
+6. SMOTE on training data
+7. Feature scaling
+8. Logistic Regression baseline
+9. Random Forest training
+10. Probability prediction
+11. Decision threshold optimization
+12. Model evaluation
+13. SHAP explainability
+14. Application integration
 
 ---
 
 ## 🔬 Understanding V1–V28
 
-The dataset contains the following major variables:
+The dataset contains:
 
 - `Time`
 - `V1–V28`
 - `Amount`
 - `Class`
 
-`V1–V28` are anonymized PCA-transformed numerical features provided by the dataset.
+The `V1–V28` variables are **anonymized PCA-transformed numerical features** supplied by the dataset.
 
-They are **not** direct business attributes such as:
+They are not direct business attributes such as:
 
 - Customer age
 - Customer location
@@ -241,51 +316,71 @@ They are **not** direct business attributes such as:
 
 Because their original meanings are anonymized, the application does not invent interpretations for them.
 
-In Simple Mode, users do not need to manually enter these features.
+In **Simple Mode**, users do not need to manually enter these variables.
+
+The general flow is:
+
+    Transaction Data
+          ↓
+    Existing V1–V28 Features
+          ↓
+    Preprocessing
+          ↓
+    Random Forest
+          ↓
+    Fraud Probability
+          ↓
+    Risk Decision
 
 ---
 
 ## 🛠️ Technology Stack
 
-**Programming**
+### Programming
 
 - Python
 
-**Data Science**
+### Data Science
 
 - Pandas
 - NumPy
+- Data Visualization
+- Exploratory Data Analysis
+- SQL Analytics
 
-**Machine Learning**
+### Machine Learning
 
 - Scikit-learn
 - Random Forest
+- Logistic Regression
 - SMOTE
+- Feature Scaling
+- Threshold Optimization
 
-**Explainable AI**
+### Explainable AI
 
 - SHAP
 
-**Backend**
+### Backend
 
 - FastAPI
 - Pydantic
 - Uvicorn
 
-**Database**
+### Database
 
 - SQLite
 - SQL
 
-**Frontend**
+### Frontend
 
 - Streamlit
 
-**Testing**
+### Testing
 
 - Pytest
 
-**Development**
+### Development
 
 - Jupyter Notebook
 - Git
@@ -321,6 +416,14 @@ In Simple Mode, users do not need to manually enter these features.
     │   ├── scaler.pkl
     │   └── threshold.pkl
     │
+    ├── screenshots/
+    │   ├── home.png
+    │   ├── risk-checker.png
+    │   ├── fraud-intelligence.png
+    │   ├── ai-model.png
+    │   ├── explainable-ai.png
+    │   └── fraudguard-ai.png
+    │
     ├── src/
     │   ├── __init__.py
     │   ├── assistant.py
@@ -346,41 +449,43 @@ In Simple Mode, users do not need to manually enter these features.
 
 ## 🚀 Run Locally
 
-### Clone the repository
+### 1. Clone the repository
 
-    git clone YOUR_GITHUB_URL
+    git clone https://github.com/kummetha-manaswi/credit-card-fraud-detection.git
     cd credit-card-fraud-detection
 
-### Install dependencies
+### 2. Install dependencies
 
     pip install -r requirements.txt
 
-### Run tests
+### 3. Run automated tests
 
     pytest -v
 
-### Start Streamlit
+### 4. Start Streamlit
 
     streamlit run streamlit_app.py
 
-### Start FastAPI
+### 5. Start FastAPI
 
     uvicorn api.app:app --reload --port 8000
 
-The FastAPI Swagger documentation is available through the `/docs` route.
+FastAPI Swagger documentation:
+
+    http://localhost:8000/docs
 
 ---
 
 ## 🧪 Testing
 
-Automated tests cover:
+The project includes automated tests covering:
 
 - Prediction pipeline
 - FastAPI endpoints
 - SQL analytics
 - FraudGuard AI assistant
 
-Run:
+Run the complete test suite with:
 
     pytest -v
 
@@ -388,9 +493,9 @@ Run:
 
 ## 📌 Dataset
 
-This project uses the public credit card fraud detection dataset containing transaction records with anonymized PCA features.
+This project uses the public **Credit Card Fraud Detection** dataset containing transaction records with anonymized PCA features.
 
-The original raw dataset is not included in the GitHub repository because of its size.
+The original raw dataset is not included in the repository because of its large file size.
 
 A curated sample dataset is included for application demonstration and testing.
 
@@ -398,15 +503,17 @@ A curated sample dataset is included for application demonstration and testing.
 
 ## 🌐 Deployment
 
-The Streamlit application can be deployed using Streamlit Community Cloud directly from the GitHub repository.
+The Streamlit application is deployed using **Streamlit Community Cloud**.
 
-**Application entry point:**
+### Application
 
-`streamlit_app.py`
+https://ai-fraud-guard.streamlit.app/
 
-After deployment, replace the placeholder below with the generated application URL:
+### Entry Point
 
-`YOUR_STREAMLIT_URL`
+    streamlit_app.py
+
+The application can be deployed directly from the GitHub repository using Streamlit Community Cloud.
 
 ---
 
@@ -414,7 +521,7 @@ After deployment, replace the placeholder below with the generated application U
 
 This project is an educational and portfolio implementation and should not be treated as a production banking fraud prevention system.
 
-The dataset's anonymized features and historical transaction distribution do not represent every real-world banking environment.
+The dataset uses anonymized features and historical transaction data, which do not represent every real-world banking environment.
 
 A production fraud detection system would additionally require:
 
@@ -428,24 +535,57 @@ A production fraud detection system would additionally require:
 - Data privacy controls
 - Security infrastructure
 - Model drift monitoring
+- Production-grade alerting and investigation workflows
 
 ---
 
 ## 🎓 What This Project Demonstrates
 
-This project combines:
+### Data Science
 
-**Data Science**  
-**Machine Learning**  
-**Imbalanced Classification**  
-**Feature Engineering**  
-**Explainable AI**  
-**SQL Analytics**  
-**REST APIs**  
-**Interactive Web Applications**  
-**Automated Testing**
+- Exploratory Data Analysis
+- Data Cleaning
+- Imbalanced Classification
+- Data Visualization
+- SQL Analytics
 
-The project demonstrates the complete journey from a machine learning model to an interactive application rather than stopping at model training alone.
+### Machine Learning
+
+- Logistic Regression
+- Random Forest
+- SMOTE
+- Feature Scaling
+- Threshold Optimization
+- Model Evaluation
+
+### Explainable AI
+
+- SHAP
+- Global Feature Importance
+- Local Feature Contributions
+
+### Software Engineering
+
+- FastAPI
+- Streamlit
+- Modular Python Architecture
+- Automated Testing
+- Model Artifact Management
+
+### Deployment
+
+- Streamlit Community Cloud
+- GitHub-based deployment
+
+---
+
+## 💡 Key Takeaway
+
+This project demonstrates the complete journey from:
+
+**Data → Analysis → Machine Learning → Explainability → API → Application → Deployment**
+
+Rather than leaving the model inside a notebook, the project turns the machine learning workflow into an interactive application that users can actually interact with.
 
 ---
 
@@ -455,8 +595,11 @@ The project demonstrates the complete journey from a machine learning model to a
 
 Data Science | Machine Learning | AI
 
+GitHub:  
+https://github.com/kummetha-manaswi
+
 ---
 
 ## 📄 License
 
-MIT License
+This project is licensed under the **MIT License**.
